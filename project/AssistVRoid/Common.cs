@@ -216,7 +216,7 @@ namespace MyLauncher
             psi.WorkingDirectory = CommonFiles.GetDirectory(path);
 
             var p = System.Diagnostics.Process.Start(psi);
-            p.WaitForInputIdle(); // 起動してアイドル状態になるまで待つ
+            //p.WaitForInputIdle(); // 起動してアイドル状態になるまで待つ...と、処理を専有するのでReleaseでビルドすると動かなくなる...
 
             if (is_window_show)
             {

@@ -31,7 +31,7 @@ namespace AssistVRoid
         {
             Common.SettingTextBoxDragEvent(textBox1, true);
 
-            // コンフィグファイルとUIの関連付けと読み込み（読み込むファイルがなければスルー）
+            // コンフィグファイルとUIの関連付けと読み込み
             config_conect_ui.Add(new Common.ConfigConectUI("Main.保存先のディレクトリ", textBox1));
             Common.LoadConfig(config_file, config_conect_ui);
 
