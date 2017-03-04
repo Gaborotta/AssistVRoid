@@ -54,5 +54,10 @@ namespace AssistVRoid
             assist_vroid_core.output_voice_wav_dir_path = ((TextBox)sender).Text;
             Common.SaveConfig(config_file, config_conect_ui);
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            assist_vroid_core.ReSetup();
+        }
     }
 }

@@ -275,7 +275,7 @@ namespace AssistVRoid
         {
             this.input = input;
 
-            // inputをForm1からうけとっているが、このクラスで生成し他方が良い気がする（多重登録に対して処理してないし、その判別の必要性もややこしい）
+            // inputをForm1からうけとっているが、このクラスで生成した方が良い気がする（多重登録に対して処理してないし、その判別の必要性もややこしい）
             input.AddTargetKey( "R", Input.VK.VK_R );
             input.AddTargetKey( "Ctrl_L", Input.VK.VK_LCTRL );
             input.AddTargetKey( "Ctrl_R", Input.VK.VK_RCTRL);
@@ -340,6 +340,16 @@ namespace AssistVRoid
             {
                 vr.Value.StartApp();
             }
+        }
+
+        public void ReSetup()
+        {
+            // 今の状態をクリアー
+            vr_datas.Clear();
+
+            // 設定ファイルの読み込み
+            script = new Script("init.txt", _ScriptLineAnalyze);
+            script.Run("Setup");
         }
 
         private bool _ScriptLineAnalyze(Script.ScriptLineToken t)
