@@ -233,19 +233,38 @@ namespace AssistVRoid
                     Thread.Sleep(10);
                     var wcm = new WindowControllerManager("音声ファイルの保存");
                     var dlg = wcm.GetTop();
-                    if (dlg != null && wcm.GetChiledByClassName("Edit") != null)
+                    if (dlg == null) continue;
+                    if (wcm.GetChiledByClassName("Edit") == null) continue;
+                    if (wcm.GetChiledByText("保存(&S)") == null) continue;
+
+                    var dir = save_dir_path;
+                    var name_head = output_name + "_";
+                    var file_type = "wav";
+
+                    var text_box = wcm.GetChiledByClassName("Edit");
+                    var file_path = CreateNextPathByVoiceRoid(dir, name_head, file_type);
+                    text_box.SendText(file_path);
+
+                    // 入力が正常にされてるかチェック
+                    // 正常に動作していない場合は、時間をおいて再入力
+                    var text = text_box.GetText();
+                    var i = 0;
+                    var re_set_marign = 10;
+                    while (text != file_path)
                     {
-                        var dir = save_dir_path;
-                        var name_head = output_name + "_";
-                        var file_type = "wav";
+                        Console.WriteLine("NG");
+                        WaitSleep.Do(10);
+                        if (i % re_set_marign == 0) text_box.SendText(file_path);
+                        i++;
 
-                        var text_box = wcm.GetChiledByClassName("Edit");
-                        text_box.SendText(CreateNextPathByVoiceRoid(dir, name_head, file_type));
-
-                        var ok_button = wcm.GetChiledByText("保存(&S)");
-                        ok_button.ClickL();
-                        break;
                     }
+
+                    WaitSleep.Do(10);
+                    var ok_button = wcm.GetChiledByText("保存(&S)");
+                    ok_button.ClickL();
+                    WaitSleep.Do(10);
+
+                    break;
                 }
             }
 

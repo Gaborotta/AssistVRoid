@@ -235,6 +235,15 @@ namespace MyLauncher
             class_name = _class_name.ToString();
         }
 
+        public string GetText()
+        {
+            var _text = new StringBuilder(STRING_MAX);
+            //GetWindowText(hWnd, _text, STRING_MAX);
+
+            SendMessage(hWnd, (int)WM.WM_GETTEXT, _text.Capacity, _text);
+            return _text.ToString();
+        }
+
         public WindowController GetOwner()
         {
             //var owner_hWnd = GetWindow(hWnd, (UInt32)GW.GW_OWNER);
@@ -388,6 +397,7 @@ namespace MyLauncher
             WM_MOUSEMOVE   = 0x200,
             WM_LBUTTONDOWN = 0x0201,
             WM_LBUTTONUP   = 0x0202,
+            WM_GETTEXT = 0x000D,
         }
         private enum MK
         {
