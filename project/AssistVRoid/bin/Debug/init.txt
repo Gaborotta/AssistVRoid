@@ -1,0 +1,52 @@
+
+def Setup
+	// AddVoiceRoid [システム名] [ファイル出力名] [アプリのパス]
+	//     [システム名] : 利用用途未定
+	//     [ファイル出力名] : ファイル出力時に先頭に付ける部分 例) [ファイル出力名]_001.wav のように保存される
+	//     [アプリのパス] : VOICEROIDアプリの実行ファイルパス
+	// $ SetupVoice [起動時に再生するテキスト]
+	//     [起動時に再生するテキスト] : "" にすることで無効にできる
+	// $ VoiceEffect [ショートカットの対応キー(数字のみ)] [音量] [話速] [高さ] [抑揚]
+	//     音声効果のショートカットキーに対する、変更内容
+	//     Ctrl+指定したキー(数字) がショートカットキーとなる
+	//     ショートカットのキーはテンキーの数字では動かない
+
+	AddVoiceRoid "結月ゆかり" "結月ゆかり" "VOICEROID＋ 結月ゆかり EX" "C:\Program Files (x86)\AHS\VOICEROID+\YukariEX\VOICEROID.exe"
+	$ SetupVoice "ボイスロイド 結月ゆかり 起動しました"
+	$ VoiceEffect "1" "1.00" "1.30" "1.10" "1.25"
+	$ VoiceEffect "2" "1.00" "1.45" "1.10" "1.25"
+	$ VoiceEffect "3" "1.00" "1.60" "1.10" "1.25"
+	$ VoiceEffect "4" "1.00" "1.30" "0.80" "1.25"
+	$ VoiceEffect "5" "1.00" "1.30" "1.30" "1.25"
+	$ VoiceEffect "6" "1.00" "1.30" "1.50" "1.25"
+	$ VoiceEffect "7" "1.00" "1.30" "2.00" "1.25"
+	$ VoiceEffect "8" "1.00" "1.50" "1.30" "1.50"
+	$ VoiceEffect "9" "1.00" "0.50" "0.50" "0.50"
+	$ VoiceEffect "0" "1.00" "1.00" "1.00" "1.00"
+
+	AddVoiceRoid "琴葉茜" "琴葉茜" "VOICEROID＋ 琴葉茜" "C:\Program Files (x86)\AHS\VOICEROID+\Akane\VOICEROID.exe"
+	$ SetupVoice "ボイスロイド 琴葉茜 起動したで"
+	$ VoiceEffect "1" "1.00" "1.30" "1.10" "1.25"
+	$ VoiceEffect "2" "1.00" "1.45" "1.10" "1.25"
+	$ VoiceEffect "3" "1.00" "1.60" "1.10" "1.25"
+	$ VoiceEffect "4" "1.00" "1.30" "0.80" "1.25"
+	$ VoiceEffect "5" "1.00" "1.30" "1.30" "1.25"
+	$ VoiceEffect "6" "1.00" "1.30" "1.50" "1.25"
+	$ VoiceEffect "7" "1.00" "1.30" "2.00" "1.25"
+	$ VoiceEffect "8" "1.00" "1.50" "1.30" "1.50"
+	$ VoiceEffect "9" "1.00" "0.50" "0.50" "0.50"
+	$ VoiceEffect "0" "1.00" "1.00" "1.00" "1.00"
+
+	AddVoiceRoid "琴葉葵" "琴葉葵" "VOICEROID＋ 琴葉葵" "C:\Program Files (x86)\AHS\VOICEROID+\Aoi\VOICEROID.exe"
+	$ SetupVoice "ボイスロイド 琴葉葵 起動しました"
+	$ VoiceEffect "1" "1.00" "1.30" "1.10" "1.25"
+	$ VoiceEffect "2" "1.00" "1.45" "1.10" "1.25"
+	$ VoiceEffect "3" "1.00" "1.60" "1.10" "1.25"
+	$ VoiceEffect "4" "1.00" "1.30" "0.80" "1.25"
+	$ VoiceEffect "5" "1.00" "1.30" "1.30" "1.25"
+	$ VoiceEffect "6" "1.00" "1.30" "1.50" "1.25"
+	$ VoiceEffect "7" "1.00" "1.30" "2.00" "1.25"
+	$ VoiceEffect "8" "1.00" "1.50" "1.30" "1.50"
+	$ VoiceEffect "9" "1.00" "0.50" "0.50" "0.50"
+	$ VoiceEffect "0" "1.00" "1.00" "1.00" "1.00"
+	
